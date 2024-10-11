@@ -36,6 +36,7 @@ def list_files(categoria_seleccionada):
 st.subheader("Empezar a subir textos :page_facing_up:")
 categoria_seleccionada = st.selectbox("Selecciona una materia", carpetas)
 uploaded_file = st.file_uploader("Selecciona el texto de la materia seleccionada", type=['txt', 'csv', 'jpg', 'png', 'pdf'])
+
 if st.button("Subir el archivo seleccionado :heavy_check_mark:"):
     upload_file(uploaded_file, categoria_seleccionada)
 
