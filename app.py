@@ -40,9 +40,9 @@ def list_files(categoria_seleccionada):
 
 # Función para analizar texto con Voyant Tools
 def analizar_texto_con_voyant(texto):
-    url = "https://voyant-tools.org/tool/Cirrus/"
+    url = "https://voyant-tools.org/"
     params = {
-        'input': texto
+        'corpus': texto
     }
     response = requests.post(url, data=params)
     if response.status_code == 200:
