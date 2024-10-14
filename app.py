@@ -38,19 +38,6 @@ def list_files(categoria_seleccionada):
     else:
         return []
 
-# Función para analizar texto con Voyant Tools
-def analizar_texto_con_voyant(texto):
-    url = "https://voyant-tools.org/tool/Cirrus/"
-    params = {
-        'corpus': texto
-    }
-    response = requests.get(url, params=params)
-    if response.status_code == 200:
-        st.write("Análisis completado con Voyant Tools")
-        st.write(response.url)
-    else:
-        st.error("Error al analizar el texto con Voyant Tools")
-
 # Subida de archivos
 st.subheader("Empezar a subir textos :page_facing_up:")
 categoria_seleccionada = st.selectbox("Selecciona una materia", carpetas)
@@ -72,15 +59,3 @@ for carpeta in carpetas:
                 st.download_button(f"Descargar {archivo}", data=file, file_name=archivo)
     else:
         st.warning(f"No hay archivos en la categoría {carpeta}.")
-
-# Análisis de archivos
-st.subheader("Analizar textos con Voyant Tools :bar_chart:")
-archivo_para_analizar = st.selectbox("Selecciona un archivo para analizar", list_files(categoria_seleccionada))
-if st.button("Analizar el archivo seleccionado :mag:"):
-    if archivo_para_analizar:
-        ruta_archivo = os.path.join(directorio_base, categoria_seleccionada, archivo_para_analizar)
-        with open(ruta_archivo, 'r', encoding='utf-8') as file:
-            texto = file.read()
-            analizar_texto_con_voyant(texto)
-    else:
-        st.warning("No has seleccionado ningún archivo para analizar.")
