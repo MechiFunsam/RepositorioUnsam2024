@@ -9,7 +9,7 @@ pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tessera
 
 st.title("Repositorio ComUnsam")
 st.write("Bienvenidx :student: a nuestro repositorio de textos y apuntes de la carrera de Estudios de la Comunicación de la EH. Desde acá vas poder podrás subir y descargar textos de las distintas materias. Además te brindamos una herramienta de análisis de textos.")
-@@ -40,24 +46,55 @@ def list_files(categoria_seleccionada):
+def list_files(categoria_seleccionada):
 
 # Función para analizar texto con Voyant Tools
 def analizar_texto_con_voyant(texto):
