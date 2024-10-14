@@ -42,12 +42,12 @@ def list_files(categoria_seleccionada):
 def analizar_texto_con_voyant(texto):
     url = "https://voyant-tools.org/"
     params = {
-        'corpus': texto
+        'input': texto
     }
     response = requests.post(url, data=params)
     if response.status_code == 200:
         st.write("Análisis completado con Voyant Tools")
-        st.write(response.url)
+        st.write(f"[Ver análisis completo](https://voyant-tools.org/?corpus={response.text})")
     else:
         st.error("Error al analizar el texto con Voyant Tools")
 
