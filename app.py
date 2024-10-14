@@ -40,14 +40,14 @@ def list_files(categoria_seleccionada):
 
 # Función para analizar texto con Voyant Tools
 def analizar_texto_con_voyant(texto):
-    url = "https://voyant-tools.org/"
+    url = "https://voyant-tools.org/tool/Cirrus/"
     params = {
         'input': texto
     }
     response = requests.post(url, data=params)
     if response.status_code == 200:
         st.write("Análisis completado con Voyant Tools")
-        st.write(f"[Ver análisis completo](https://voyant-tools.org/?corpus={response.text})")
+        st.write(response.url)
     else:
         st.error("Error al analizar el texto con Voyant Tools")
 
