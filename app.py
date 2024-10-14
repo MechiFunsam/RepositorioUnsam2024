@@ -42,9 +42,9 @@ def list_files(categoria_seleccionada):
 def analizar_texto_con_voyant(texto):
     url = "https://voyant-tools.org/tool/Cirrus/"
     params = {
-        'corpus': texto
+        'input': texto
     }
-    response = requests.get(url, params=params)
+    response = requests.post(url, data=params)
     if response.status_code == 200:
         st.write("Análisis completado con Voyant Tools")
         st.write(response.url)
