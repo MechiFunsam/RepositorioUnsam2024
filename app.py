@@ -84,3 +84,8 @@ if st.button("Analizar el archivo seleccionado :mag:"):
             analizar_texto_con_voyant(texto)
     else:
         st.warning("No has seleccionado ningún archivo para analizar.")
+
+# Mostrar el registro de textos subidos
+st.subheader("Registro de textos subidos :clipboard:")
+for categoria, cantidad in registro_textos.items():
+    st.write(f"{categoria}: {cantidad} textos subidos")
