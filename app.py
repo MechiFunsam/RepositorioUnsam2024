@@ -1,13 +1,3 @@
-
-hola, estoy desarrollando en lenguaje python en pycharm un repositorio de textos y estos textos no se guardan, cuando recargas la pagina se borran. Estoy utilizando github para alojar el codigo y streamnlit
-GPT-4o mini
-¡Hola! Parece que estás desarrollando una aplicación con Streamlit y te gustaría que tus textos se guardaran de alguna manera, en lugar de perderse al recargar la página. Hay varias formas de hacerlo. Aquí te dejo algunas sugerencias:
-
-###1. Uso de un archivo local
-
-Puedes guardar los textos en un archivo local en formato JSON o CSV. Cuando inicias la aplicación, cargas los textos desde ese archivo y, cuando se crea o actualiza un texto, lo guardas en el archivo. Aquí te dejo un ejemplo simple utilizando un archivo JSON:
-
-pythonimport
  if os.path.exists('textos.json'):  
  with open('textos.json', 'r') as f:  
  return json.load(f)  
